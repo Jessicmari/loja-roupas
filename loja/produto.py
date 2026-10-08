@@ -1,16 +1,16 @@
 """Etapa 4: o produto vira classe (Aula 6)."""
 
-TAMANHO = ("PP", "P", "M", "G", "GG")
+TAMANHOS = ("PP", "P", "M", "G", "GG")
 
 
 class Produto: 
     def __init__(self, nome, preco, tamanho):
         if not nome or not nome.strip():
-            raisse ValueError("nome do produto não pode ser vazio")
+            raise ValueError("nome do produto não pode ser vazio")
         if preco <= 0:
-            raisse ValueError("preço deve ser maior que zero")
+            raise ValueError("preço deve ser maior que zero")
         if tamanho not in TAMANHOS:
-            rais ValueError(f"tamanho inválido: {tamanho}")
+            raise ValueError(f"tamanho inválido: {tamanho}")
         self.nome = nome.strip()
         self.preco = preco
         self.tamanho = tamanho
